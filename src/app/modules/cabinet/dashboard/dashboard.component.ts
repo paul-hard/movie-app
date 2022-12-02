@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CabinetService } from '../cabinet-services/cabinet.service';
+import { SharedService } from '../../shared/shared/shared.service';
 
 import { IMuvie } from '../../global-interfaces';
 
@@ -15,15 +16,31 @@ export class DashboardComponent implements OnInit {
   public suggestions: number = 0;
 
   constructor(
-    private service: CabinetService
+    private service: CabinetService,
+    private libraryService: SharedService,
   ) { }
 
 
   ngOnInit(): void {
-    this.service.getSuggested().subscribe(data => {
-      this.tv = data.filter(item => item.media_type === 'tv').length;
-      this.movie = data.filter(item => item.media_type === 'movie').length;
-      this.suggestions = data.length;
+    this.getLibraryStats()
+    this.getSuggested()
+
+  }
+
+  getLibraryStats() {
+    this.libraryService.getAll().subscribe({
+      next: data => {
+        this.tv = data.filter(item => item.media_type === 'tv').length;
+        this.movie = data.filter(item => item.media_type === 'movie').length
+      },
+      //error
+    })
+  }
+
+  getSuggested() {
+    this.service.getSuggested().subscribe({
+      next: data => { this.suggestions = data.length },
+      //error
     })
   }
 

@@ -4,26 +4,5 @@
             <h1>Suggestions</h1>
         </div>
     </div>
-    <div class="suggest__card">
-        <div class="card" *ngFor="let item of suggestions">
-            <div class="card__poster">
-                <img src="{{baseURL + item.poster_path}}" alt="">
-                <span class="rate">
-                    {{item.vote_average }}
-                </span>
-            </div>
-
-            <div class="card__title">
-                <span class="title" *ngIf="item.name; else title">{{item.name}}</span>
-                <ng-template #title>{{item.title}}</ng-template>
-            </div>
-
-            <div class="card__details">
-                <span class="card__status" *ngIf="!item">Already watched</span>
-                <span class="card__add-btn">Suggest this</span>
-            </div>
-        </div>
-
-    </div>
-
+    <app-card class="card" [recivedMuvie]="suggestions"></app-card>
 </div>

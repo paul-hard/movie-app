@@ -12,7 +12,7 @@ export class SuggestionsComponent implements OnInit {
 
   public baseURL: string = 'https://image.tmdb.org/t/p/w500';
 
-  public suggestions: IMuvie[] = []
+  public suggestions: IMuvie[];
 
   constructor(
     private service: CabinetService

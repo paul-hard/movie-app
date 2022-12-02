@@ -8,9 +8,9 @@ describe('TvShowsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TvShowsComponent ]
+      declarations: [TvShowsComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(TvShowsComponent);
     component = fixture.componentInstance;

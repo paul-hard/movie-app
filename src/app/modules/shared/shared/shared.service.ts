@@ -10,7 +10,8 @@ import { IResponce, IMuvie } from '../../global-interfaces';
 })
 export class SharedService {
 
-  public url: string = 'http://localhost:3200/suggested-muvies'
+  public url: string = 'http://localhost:3200/suggested-muvies';
+  public libraryUrl: string = 'http://localhost:3200/my-library';
 
   constructor(private http: HttpClient) { }
 
@@ -20,27 +21,15 @@ export class SharedService {
     return this.http.get(url).pipe(map(response => response as IResponce))
   }
 
-  // suggestMuvie(muvie: IMuvie) {
-  //   console.log(muvie);
-  //   const url = `http://localhost:3200/suggested-muvies`
-  //   return this.http.post(url, muvie)
-  // }
 
-  getAll() {
-    return this.http.get(this.url).pipe(map((response) => {
-      console.log(response);
+  getAll() { //change url to libraryUrl
+    return this.http.get(this.libraryUrl).pipe(map((response) => {
       return response as IMuvie[]
     }))
-
   }
 
-  // getSuggested() {
-  //   return this.http.get(this.url).pipe(map((response) => {
-  //     console.log(response);
-  //     return response as IMuvie[]
-  //   }))
-
-  // }
-
+  addToLibrary(muvie: IMuvie) {
+    return this.http.post(this.libraryUrl, muvie)
+  }
 
 }

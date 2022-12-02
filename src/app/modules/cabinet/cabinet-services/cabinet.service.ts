@@ -15,11 +15,8 @@ export class CabinetService {
 
   getSuggested() {
     return this.http.get(this.url).pipe(map((response) => {
-      console.log(response);
       return response as IMuvie[]
     }))
-
   }
-
 
 }

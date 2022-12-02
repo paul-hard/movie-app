@@ -18,16 +18,19 @@ export class MuviesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+    this.initCard();
   }
 
   searchMuvie(event: string) {
     console.log(event); // get request with name, recived data filter and assign to muvies
-
   }
 
+  initCard() {
+    this.service.getAll().subscribe({
+      next: data => { this.muvies = data.filter(item => item.media_type === 'movie'); },
+      error: err => { console.error(err); }
+    })
 
-
-
+  }
 
 }

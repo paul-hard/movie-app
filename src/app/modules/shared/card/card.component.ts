@@ -1,22 +1,22 @@
 import { Component, OnInit, Input } from '@angular/core';
+
 import { MainPageService } from '../../main-page/services/main-page.service';
+import { SharedService } from '../shared/shared.service'
 import { IResponce, IMuvie } from '../../global-interfaces';
 
 interface ISuggestMuvie {
-  original_title: string,
-  backdrop_path: string,
-  overview: string,
-  popularity: number,
+  original_title?: string,
+  overview?: string,
+  popularity?: number,
   poster_path: string,
-  release_date: string,
-  title: string,
-  video: boolean,
+  release_date?: string,
+  title?: string,
   vote_average: number,
-  vote_count: number,
-  id: number,
+  id?: number,
   media_type: string,
-  genre_ids: number[];
-  name: string;
+  genre_ids?: number[];
+  name?: string;
+  isWatched?: boolean
 }
 
 @Component({
@@ -27,16 +27,19 @@ interface ISuggestMuvie {
 export class CardComponent implements OnInit {
 
 
+  public baseURL: string = 'https://image.tmdb.org/t/p/w500';
+  public library: IMuvie[]
 
-  public baseURL: string = 'https://image.tmdb.org/t/p/w500'
+  @Input() recivedMuvie: IMuvie[];
 
-  @Input() multiSearchData!: IResponce;
-  @Input() recivedMuvie: IMuvie[] = [];
 
-  constructor(private service: MainPageService) { }
+  constructor(
+    private service: MainPageService,
+    private sharedServices: SharedService,
+  ) { }
 
   ngOnInit(): void {
-    console.log(this.recivedMuvie);
+    this.getLibrary();
   }
 
   suggest(item: ISuggestMuvie) {
@@ -48,12 +51,38 @@ export class CardComponent implements OnInit {
       media_type: item.media_type,
       vote_average: item.vote_average,
     }
-    console.log(suggested);
-    console.log('suggested');
+    // this.service.suggestMuvie(suggested).subscribe({
+    // })
+  }
 
-    this.service.suggestMuvie(suggested).subscribe({
+  addToLibrary(item: IMuvie) {
+    const watched: IMuvie = {
+      muvie_id: item.muvie_id,
+      title: item.title,
+      name: item.name,
+      poster_path: item.poster_path,
+      media_type: item.media_type,
+      vote_average: item.vote_average,
+      isWatched: true
+    }
+
+    this.sharedServices.addToLibrary(watched).subscribe({
 
     })
+
+    //remove from suggested
+  }
+
+  getLibrary() {
+    this.sharedServices.getAll().subscribe({
+      next: data => {
+        this.library = data
+      }
+    })
+  }
+
+  isWatched() {
+
   }
 
 
