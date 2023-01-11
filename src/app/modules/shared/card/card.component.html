@@ -1,18 +1,19 @@
-<div class="card" *ngFor="let item of recivedMuvie">
+<div class="card">
     <div class="card__poster">
-        <img src="{{baseURL + item.poster_path}}" alt="">
+        {{multiSearchResponce}}
+        <!-- <img src="{{baseURL + item.poster_path}}" alt=""> -->
         <span class="rate">
-            {{item.vote_average}}
+            <!-- {{item.vote_average}} -->
         </span>
     </div>
     <div class="card__title">
-        <span class="title" *ngIf="item.name; else title">{{item.name}}</span>
-        <ng-template #title>{{item.title}}</ng-template>
+        <!-- <span class="title" *ngIf="item.name; else title">{{item.name}}</span>
+        <ng-template #title>{{item.title}}</ng-template> -->
     </div>
     <div class="card__details">
-        <span class="card__status" *ngIf="item.isWatched">Already watched</span>
-        <span class="card__add-btn" *ngIf="item.id && !item.isWatched" (click)="suggest(item)">Suggest this</span>
+        <!-- <span class="card__status" *ngIf="item.isWatched">Already watched</span> -->
+        <!-- <span class="card__add-btn" *ngIf="item.id && !item.isWatched" (click)="suggest(item)">Suggest this</span>
         <span class="card__add-btn" *ngIf="item.muvie_id" (click)="addToLibrary(item)">Add to my
-            list</span>
+            list</span> -->
     </div>
 </div>

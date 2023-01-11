@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { CardComponent } from '../card/card.component';
 import { SearchBoxComponent } from '../search-box/search-box.component';
 
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -13,8 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
-    CardComponent,
-    SearchBoxComponent
+
   ],
   imports: [
     CommonModule,
@@ -24,8 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule
   ],
   exports: [
-    CardComponent,
-    SearchBoxComponent,
+
     MatButtonToggleModule,
     MatInputModule,
     MatIconModule,

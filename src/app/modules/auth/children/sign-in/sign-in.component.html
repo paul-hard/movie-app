@@ -1,0 +1,7 @@
+<div class="sign-in-wrapper">
+  <form method="post" [formGroup]="signInForm" (ngSubmit)="signIn()" class="sign-in-form">
+    <input type="text" formControlName="username">
+    <input type="text" formControlName="pass">
+    <button>Login</button>
+  </form>
+</div>

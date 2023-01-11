@@ -1,0 +1,9 @@
+<div class="sign-up-wrapper">
+    <h6>Create own movie collections, sign up!</h6>
+    <form method="post" [formGroup]="signUpForm" (ngSubmit)="signUp()" class="sign-up-form">
+        <input formControlName="username" type="text">
+        <input formControlName="pass" type="text">
+        <input formControlName="confirm_pass" type="text">
+        <button>Sign up</button>
+    </form>
+</div>
