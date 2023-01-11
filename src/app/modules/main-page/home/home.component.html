@@ -1,0 +1,28 @@
+<div class="home-wrapper container">
+    <div class="home__page-info">
+        <div class="page-title">
+            <h1>Home page</h1>
+        </div>
+        <div class="project-decription">
+            <span>List of movies and TV Shows, I,
+                <p class="user-name">Pavlo Hurtovenko </p>
+                have watched till date.
+                Explore what I have watched and
+                also feel free to make a suggestion. 😉
+            </span>
+        </div>
+        <div class="search-bar">
+            <!-- <app-search-box></app-search-box> -->
+        </div>
+        <mat-button-toggle-group name="contentType" aria-label="content type" class="home__toggle-group">
+            <mat-button-toggle class="toggle-btn" value="All" checked>All</mat-button-toggle>
+            <mat-button-toggle class="toggle-btn" value="Movies">Movies</mat-button-toggle>
+            <mat-button-toggle class="toggle-btn" value="TV-shows">TV shows</mat-button-toggle>
+        </mat-button-toggle-group>
+        <div class="quantity">
+            <span>All</span>
+            <span>({{quantity}})</span>
+        </div>
+    </div>
+    <!-- <app-card class="card" [recivedMuvie]="all"></app-card> -->
+</div>

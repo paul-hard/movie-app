@@ -1,0 +1,52 @@
+@import "../../../../shared-styles/variables";
+
+.search-box {
+    width: 344px;
+    border: 1px solid $border-grey700;
+    border-radius: 12px;
+    background-color: $bg-black10;
+    display: flex;
+    align-items: center;
+    padding-block: 4px;
+
+    img {
+        padding-inline: 20px;
+    }
+
+    .example-full-width {
+        width: 100%;
+
+        mat-label {
+            font-size: 14px;
+            line-height: 1.14;
+            color: $text-grey600;
+            font-weight: 400;
+        }
+
+        input {
+            color: $text-grey400;
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        ::ng-deep .mat-input-element::placeholder {
+            color: $text-grey400;
+        }
+
+        ::ng-deep .mat-form-field-underline {
+            background-color: transparent;
+        }
+
+        ::ng-deep .mat-form-field-underline .mat-form-field-ripple {
+            background-color: transparent;
+        }
+
+        ::ng-deep .mat-form-field-wrapper,
+        .ng-tns-c71-0 {
+            padding-bottom: 0px;
+        }
+
+
+    }
+}

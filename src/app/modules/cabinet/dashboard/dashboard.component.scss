@@ -1,0 +1,106 @@
+@import "../../../../shared-styles/variables";
+@import "../../../../shared-styles/mixins";
+
+.dashboard-wrapper {
+    padding-block: 60px 120px;
+    display: flex;
+    flex-direction: column;
+
+
+    .page-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-bottom: 80px;
+
+        .page-title {
+            @include heading-one;
+        }
+
+    }
+
+    h1 {
+        margin: 0;
+    }
+}
+
+.row {
+    display: flex;
+    gap: 24px;
+    padding: 80px 40px;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 16px;
+        gap: 8px;
+        width: 282px;
+        background: $bg-grey900;
+        opacity: 0.8;
+        border-radius: 12px;
+
+        .title-amount {
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+            color: $tetx-primary50;
+        }
+
+        .card-description {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: $text-grey400;
+
+        }
+    }
+
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+
+    .links-title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.2;
+        text-align: center;
+        letter-spacing: -0.015em;
+        color: $tetx-primary50;
+        padding-block: 0px 40px;
+    }
+
+    .links-row {
+        display: flex;
+        gap: 24px;
+
+        .links-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            width: 586px;
+            background: $bg-black20;
+            border-radius: 12px;
+            cursor: pointer;
+
+            span {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 1.5;
+                letter-spacing: 0.02em;
+                color: $text-primary400;
+            }
+        }
+
+    }
+}

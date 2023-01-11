@@ -1,0 +1,19 @@
+<div class="suggest-wrapper container">
+    <div class="suggest__page-info">
+        <div class="page-title">
+            <h1>Suggest me</h1>
+        </div>
+        <div class="appericiate">
+            <p>I will really appericiate it if you take time to suggest me something good to <br>watch.</p>
+        </div>
+        <div class="search">
+            <app-search-box (multiSearchEvent)="multiSearchEvent($event)"></app-search-box>
+            <button class="btn-search" (click)="multiSearchInitClick()">Search</button>
+        </div>
+    </div>
+    <app-card class="suggest__card"></app-card>
+    <div class="suggest__manually">
+        <span class="message">Didin’t find the one you looking for?</span>
+        <button class="btn-manually">Suggest Manually</button>
+    </div>
+</div>

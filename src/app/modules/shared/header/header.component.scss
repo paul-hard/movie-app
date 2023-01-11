@@ -1,0 +1,24 @@
+@import "../../../../shared-styles/variables";
+@import "../../../../shared-styles/mixins";
+
+.header {
+    background-color: $bg-grey900;
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.header__logo {
+    padding-block: 20px;
+}
+
+.header__nav {
+    a {
+        @include nav-link
+    }
+
+}

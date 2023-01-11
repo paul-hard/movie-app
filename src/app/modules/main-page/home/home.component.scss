@@ -1,0 +1,117 @@
+@import "../../../../shared-styles/variables";
+@import "../../../../shared-styles/mixins";
+
+.home-wrapper {
+    padding-block: 80px 156px;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+@media(max-width: 1245px) {
+    .card {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+}
+
+@media(max-width: 920px) {
+    .card {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+@media(max-width: 768px) {
+    .card {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 16px;
+    }
+}
+
+.home__page-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    .project-decription {
+        max-width: 588px;
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 20px;
+        @include heading-six;
+
+        .user-name {
+            display: inline;
+            font-size: 16px;
+            line-height: 1.33;
+            font-weight: 400;
+            color: $text-primary200;
+            padding-inline: 2px;
+        }
+    }
+
+    .page-title {
+        @include heading-one;
+        margin-bottom: 16px;
+    }
+
+    .search-bar {
+        font-size: 16px;
+        color: #fff;
+
+    }
+}
+
+.home__toggle-group {
+    margin-top: 80px;
+    padding: 8px;
+    background-color: $bg-black20;
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    .mat-button-toggle {
+        padding: 6px 28px 6px 28px;
+        color: $text-grey300;
+        border-radius: 8px;
+        background-color: transparent;
+        border: 1px solid transparent;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .mat-button-toggle-checked {
+        background-color: $bg-primary400;
+        color: $tetx-primary50;
+        border-radius: 8px;
+        transition: all 0.3ms ease-out;
+    }
+}
+
+
+.quantity span:first-child {
+    font-size: 32px;
+    padding-right: 8px;
+}
+
+.quantity {
+    color: $text-grey400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -2%;
+    font-weight: 600;
+    margin-block: 24px;
+
+}
+
+
+
+
+h1 {
+    margin: 0;
+}

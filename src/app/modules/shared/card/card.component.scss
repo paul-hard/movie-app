@@ -1,0 +1,63 @@
+@import '../../../../shared-styles/variables';
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 282px;
+    border: 1px solid $bg-grey-opacity;
+    background-color: $bg-grey-opacity;
+    border-radius: 12px;
+    padding: 8px 8px 0px 8px;
+    cursor: pointer;
+
+    .card__poster {
+        position: relative;
+        max-width: 266px;
+        max-height: 400px;
+        background-color: $bg-grey800;
+        border-radius: 8px;
+
+        img {
+            border-radius: 8px;
+            max-width: 266px;
+        }
+
+        .rate {
+            position: absolute;
+            top: 5px;
+            left: 7px;
+            color: orange;
+            font-size: 16px;
+            font-weight: 900;
+            padding: 5px;
+        }
+    }
+
+    .card__title {
+        align-self: flex-start;
+        margin: 16px 8px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+        color: $text-grey50;
+    }
+}
+
+.card__details {
+    margin: 16px 8px;
+    align-self: flex-start;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+
+    .card__status {
+        color: $text-succes400;
+    }
+
+    .card__add-btn {
+        color: $text-primary400;
+
+    }
+}

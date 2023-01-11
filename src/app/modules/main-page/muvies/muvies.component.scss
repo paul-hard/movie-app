@@ -1,0 +1,94 @@
+@import "../../../../shared-styles/variables";
+@import "../../../../shared-styles/mixins";
+
+.muvies-wrapper {
+    padding-block: 60px 156px;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+@media(max-width: 1245px) {
+    .card {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+}
+
+@media(max-width: 920px) {
+    .card {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+@media(max-width: 768px) {
+    .card {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 16px;
+    }
+}
+
+.muvies__page-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 48px;
+
+    .user-name {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        font-size: 12px;
+        line-height: 1.33;
+        font-weight: 400;
+        color: $text-primary200;
+    }
+
+    .page-title {
+        @include heading-one;
+    }
+
+    .search {}
+}
+
+h1 {
+    margin: 0;
+}
+
+
+.muvies__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    .card-defauld {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 16px;
+        color: $text-grey50;
+        font-family: $ff;
+        border-radius: 12px;
+        margin-inline: 24px;
+        background-color: #20283ECC;
+        margin-bottom: 20px;
+    }
+
+    .card-defauld img {
+        padding-top: 8px;
+        padding-inline: 8px;
+        max-width: 266px;
+        max-height: 400px;
+    }
+
+    .card-defauld span {
+        padding-block: 16px;
+        padding-left: 8px;
+        align-self: flex-start;
+    }
+
+}
